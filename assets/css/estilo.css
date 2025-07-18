@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+h1,h2,p {
+    margin: 2rem;
+}
+
+h3,h4 {
+    margin: 1.5rem;
+}
+
+h5,h6 {
+    margin: 1rem;
+}
+
+nav {
+    text-align: center;
+}
+
+ul { list-style: none; padding-left: 5px; }
+a { color:blue; text-decoration: none;}
+
+article h1 {
+    text-align: center;
+}
+
+.layout {
+    display: grid;
+    grid-template-areas: "header header header" "bar bar bar" "sidebar main anchors" "footer footer footer";
+    grid-template-columns: minmax(0,15rem) minmax(0,2.5fr) minmax(0,15rem);
+    grid-template-rows: auto auto auto auto;
+    max-width: 1440px;
+    margin: auto;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,.5);
+    border-radius: 5px;
+    scroll-behavior: smooth;
+}
+
+.header {
+    grid-area: header;
+    border-radius: inherit;
+}
+
+.header figure {
+    width: max-content;
+    margin: auto;
+}
+
+.bar {
+    background-color: #f9f9fb;
+    padding:15px;
+    border-top: solid 1px #cdcdcd;
+    border-bottom: solid 1px #cdcdcd;
+    grid-area: bar;
+}
+
+nav {
+    padding-bottom: 2rem;
+}
+
+.sidebar a, .anchors a {
+    font-size: 1.3rem;
+    line-height: 1.5;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    border-right: solid 1px #cdcdcd;
+}
+
+.main {
+    grid-area: main;
+}
+
+.main section {
+    padding: 1rem 0;
+}
+
+.back_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    background-color: #0077cc;
+    color: white;
+    padding: 0 1rem;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.back_button:hover {
+  background-color: #005fa3;
+}
+
+.back_button::before {
+    content: "←";
+    font-size: 2rem;
+    color: inherit;
+}
+
+.anchors {
+    grid-area: anchors;
+    border-left: solid 1px #cdcdcd;
+}
+
+figure {
+    text-align: center;
+}
+
+figure figcaption {
+    background-color: #FFFFFF;
+}
+
+#introducao figure {
+    background-color: #000000;
+}
+
+#introducao figure img {
+    width: 100%;
+    max-width: 350px;
+}
+
+main figure img {
+    width: 100%;
+}
+
+summary {
+    cursor: pointer;
+}
+
+.footer {
+    grid-area: footer;
+    padding: .5rem 0 0 0;
+    border-top: solid 1px #cdcdcd;
+    text-align: center;
+    border-radius: inherit;
+}
+
+.links-uteis {
+    padding-bottom: 0;
+}
+
+.info-site p {
+    margin-bottom: 1rem;
+}
+
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-areas:
+      "header"
+      "bar"
+      "sidebar"
+      "anchors"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+}
